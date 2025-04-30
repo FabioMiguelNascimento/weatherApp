@@ -1,3 +1,9 @@
 @use 'reset';
 @use 'variables';
 @use 'main';
+
+@use '../components/SearchBar/SearchBar';
+@use '../components/WeatherCard/WeatherCard';
+@use '../components/WeatherInfo/WeatherInfo';
+@use '../components/LoadingSpinner/LoadingSpinner';
+@use '../components/DateTime/DateTime';

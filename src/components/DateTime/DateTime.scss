@@ -1,0 +1,31 @@
+@use "../../styles/variables" as *;
+
+.centralContent {
+  text-align: center;
+  font-size: $font-size-medium;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+
+  .type {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    position: absolute;
+    top: 0.1rem;
+    right: 0;
+  }
+
+  .dateString {
+    display: flex;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    .month,
+    .monthDay {
+      color: $text-color-deactivated;
+    }
+  }
+}

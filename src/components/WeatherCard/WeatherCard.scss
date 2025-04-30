@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+
+.popup {
+  background-color: rgba($primary-color, 0.4);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  width: $card-width;
+  padding: 1rem;
+  color: $text-color;
+  position: relative;
+  padding-top: 2rem;
+
+  .main-content {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      margin-bottom: $padding-large;
+      font-size: $font-size-mini;
+      font-weight: 500;
+
+      .temps {
+        &.feels {
+          margin-right: auto;
+        }
+
+        &.minTemp {
+          margin-right: 1rem;
+        }
+
+        span {
+          &:first-of-type {
+            color: $text-color-deactivated;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}

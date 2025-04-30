@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+
+.input-container {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input {
+    background: transparent;
+    border: none;
+    color: $text-color;
+    font-size: 1.2rem;
+    width: auto;
+    min-width: 100px;
+    padding: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    &::placeholder {
+      color: rgba($text-color, 0.6);
+      font-size: 1rem;
+    }
+
+    &:focus {
+      outline: none;
+      cursor: text;
+    }
+  }
+
+  .search-icon {
+    color: $text-color;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../styles/variables" as *;
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 0 rgba($text-color, 0.1);
+
+  .mainTemp {
+    font-size: $font-size-large;
+    margin: 0;
+    display: flex;
+  }
+
+  .icon {
+    width: auto;
+    height: 120px;
+    object-fit: cover;
+    position: absolute;
+    top: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .description {
+    font-size: 0.7rem;
+    text-transform: capitalize;
+  }
+}
