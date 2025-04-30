@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_API_KEY
-const geoEndpoint = 'http://api.openweathermap.org/geo/1.0/direct?'
+const geoEndpoint = 'https://api.openweathermap.org/geo/1.0/direct?'
 const currentWeatherEndpoint = 'https://api.openweathermap.org/data/2.5/weather?'
 
 export const fetchStatus = {
