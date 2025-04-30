@@ -1,0 +1,36 @@
+// Colors
+$primary-color: #1e213a;
+$text-color: #ffffff;
+$text-color-deactivated: #ccc;
+$accent-color: #3498db;
+$gradient-start: #1e213a;
+$gradient-end: #100e1d;
+
+// Typography
+$font-main: "Systsem UI", sans-serif;
+$font-size-large: 4rem;
+$font-size-medium: 2rem;
+$font-size-small: 1rem;
+$font-size-mini: 0.875rem;
+
+// Spacing
+$padding-large: 2rem;
+$padding-medium: 1rem;
+$padding-small: 0.5rem;
+
+// Border Radius
+$border-radius: 1.5rem;
+$border-radius-small: 0.5rem;
+
+// Card
+$card-width: 380px;
+$card-height: 500px;
+$card-padding: $padding-large;
+
+// Shadow
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;

@@ -1,0 +1,183 @@
+@use "variables" as *;
+
+.input-container {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input {
+    background: transparent;
+    border: none;
+    color: $text-color;
+    font-size: 1.2rem;
+    width: auto;
+    min-width: 100px;
+    padding: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    &::placeholder {
+      color: rgba($text-color, 0.6);
+      font-size: 1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    &:focus {
+      outline: none;
+      cursor: text;
+    }
+  }
+
+  .search-icon {
+    color: $text-color;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba($text-color, 0.3);
+    border-radius: 50%;
+    border-top-color: $text-color;
+    animation: spin 1s ease-in-out infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+body {
+  font-family: $font-main;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  padding: $padding-medium;
+  background: linear-gradient(to bottom, $gradient-start, $gradient-end);
+
+  .popup {
+    background-color: rgba($primary-color, 0.4);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    width: $card-width;
+    padding: 1rem;
+    color: $text-color;
+    position: relative;
+    padding-top: 2rem;
+
+    .mainHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 0 rgba($text-color, 0.1);
+
+      .mainTemp {
+        font-size: $font-size-large;
+        margin: 0;
+        display: flex;
+
+        .count {
+          font-size: 1rem;
+          font-weight: 400;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .icon {
+        width: auto;
+        height: 120px;
+        object-fit: cover;
+        position: absolute;
+        top: -5rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .description {
+        font-size: 0.7rem;
+        text-transform: capitalize;
+      }
+    }
+
+    .main-content {
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        margin-bottom: $padding-large;
+        font-size: $font-size-mini;
+        font-weight: 500;
+
+        .temps {
+          &.feels {
+            margin-right: auto;
+          }
+
+          &.minTemp {
+            margin-right: 1rem;
+          }
+
+          span {
+            &:first-of-type {
+              color: $text-color-deactivated;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+
+      .centralContent {
+        text-align: center;
+        font-size: $font-size-medium;
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+
+        .type {
+          font-size: 0.9rem;
+          text-transform: capitalize;
+          position: absolute;
+          top: 0.1rem;
+          right: 0;
+        }
+
+        .dateString {
+          display: flex;
+          font-size: 0.9rem;
+          margin-top: 0.5rem;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+
+          .month,
+          .monthDay {
+            color: $text-color-deactivated;
+          }
+        }
+      }
+    }
+  }
+}
