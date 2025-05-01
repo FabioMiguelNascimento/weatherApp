@@ -4,7 +4,7 @@ import { getLocationByCity, getLocationByCoords, getWeather } from './useLocatio
 export function useWeather() {
   const [weatherData, setWeatherData] = useState(null);
   const [defaultLocation, setUserLocation] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const searchCity = async (city) => {

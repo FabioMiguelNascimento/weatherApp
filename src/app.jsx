@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { LoadingSpinner } from "./components/LoadingSpinner/LoadingSpinner";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { WeatherBackground } from "./components/WeatherBackground/WeatherBackground";
 import { WeatherCard } from "./components/WeatherCard/WeatherCard";
@@ -27,15 +26,18 @@ export default function App() {
     <>
       <WeatherBackground 
         weatherCode={currentWeather?.weather[0]?.icon}
+        isLoading={isLoading && !currentWeather}
       />
       <SearchBar 
         onSearch={searchCity} 
         locationText={getLocationText()}
         error={error}
       />
-      {isLoading && <LoadingSpinner />}
       <div className="main-area">
-        <WeatherCard weatherData={currentWeather} />
+        <WeatherCard 
+          weatherData={currentWeather} 
+          isLoading={isLoading}
+        />
       </div>
     </>
   );

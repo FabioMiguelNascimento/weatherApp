@@ -2,11 +2,23 @@ import { DateTime } from '../DateTime/DateTime';
 import { WeatherInfo } from '../WeatherInfo/WeatherInfo';
 import './WeatherCard.scss';
 
-export function WeatherCard({ weatherData }) {
+export function WeatherCard({ weatherData, isLoading }) {
+  if (!weatherData && isLoading) {
+    return (
+      <div className="popup loading-placeholder">
+        <div className="placeholder-content">
+          <div className="placeholder-icon"></div>
+          <div className="placeholder-text"></div>
+          <div className="placeholder-temp"></div>
+        </div>
+      </div>
+    );
+  }
+
   if (!weatherData) return null;
 
   return (
-    <div className="popup">
+    <div className={`popup ${isLoading ? 'loading' : ''}`}>
       <WeatherInfo data={weatherData} />
       <div className="main-content">
         <header className="header">
