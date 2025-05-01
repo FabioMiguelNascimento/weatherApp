@@ -35,7 +35,7 @@ export function WeatherCard({ weatherData, isLoading }) {
             <span>{weatherData.main.temp_max.toFixed(0)}°</span>
           </div>
         </header>
-        <DateTime />
+        <DateTime timezone={weatherData.timezone} />
       </div>
     </div>
   );

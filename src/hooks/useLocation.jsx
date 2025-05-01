@@ -47,7 +47,9 @@ export async function getLocationByCoords(lat, lon) {
 export async function getWeather(lat, long) {
     try {
         fetchStatus.loading = true;
-        const response = await axios.get(`${currentWeatherEndpoint}lat=${lat}&lon=${long}&lang=pt_br&appid=${API_KEY}&units=metric`);
+        const response = await axios.get(
+            `${currentWeatherEndpoint}lat=${lat}&lon=${long}&lang=pt_br&appid=${API_KEY}&units=metric`
+        );
         return response.data;
     } catch (error) {
         console.error('Unexpected error: ', error);   

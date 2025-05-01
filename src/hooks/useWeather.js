@@ -21,6 +21,7 @@ export function useWeather() {
 
       const { lat, lon, name, state, country } = location[0];
       const data = await getWeather(lat, lon);
+      
       if (!data) throw new Error("Erro ao buscar dados do clima");
       
       data.name = name;
