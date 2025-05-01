@@ -4,6 +4,8 @@ body {
   font-family: $font-main;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .main-area {
@@ -11,11 +13,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100svh;
-  padding: $padding-medium;
-  background: linear-gradient(
-    to bottom,
-    $gradient-start,
-    $gradient-end
-  );
+  height: 100svh;
+  padding: clamp(1rem, 5vw, $padding-medium);
+  position: relative;
+  z-index: 1;
+
+  @media (max-height: 600px) {
+    padding-top: 5rem;
+  }
 }
